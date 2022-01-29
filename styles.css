@@ -1,0 +1,12 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(sansation_light.woff);
+}
+
+h1{
+    text-align: center;
+}
+p{
+    text-align: center;
+    
+}
