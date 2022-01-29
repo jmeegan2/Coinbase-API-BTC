@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+       
+        <!-- <link rel="stylesheet" href="style.css" /> -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" 
+              content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        
+       
+     <h1>Bitcoin Price</h1>
+     <p id="data"></p>
+        <!-- table for showing data -->
+        <!-- <p id="price"></p> -->
+    </body>
+</html>
+<script>
+    
+
+init()
+
+function init() {
+
+    var url = "https://api.coinbase.com/v2/prices/spot?currency=USD"
+
+    var data = ''
+
+    $.get(url, function (data) {
+        console.log(data)
+
+        data = ` 
+        <p>$ ${data.data.amount}</p>      
+       
+        `
+      // data.data is what made this work for go knows why
+        $("#data").html(data)
+    })
+}
+</script>
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coinbase API</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+ 
+<div id="price-data"><p></p></div>
+
+</body>
+
+</html> -->
